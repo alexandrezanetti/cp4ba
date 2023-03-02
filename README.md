@@ -75,6 +75,11 @@ It takes some minutes to have the operator installed. It's imperative that you c
 
 <img width="1475" alt="image" src="https://user-images.githubusercontent.com/65564207/222499358-2c2a9bcf-a25e-4d74-b4a5-c267c5637cd9.png">
 
-After that you are ready to go on and create an instance of each component of Cloud Pak for Business Automation.
+After that you are ready to go on and create an instance of each component of Cloud Pak for Business Automation according to the instructions available **[here](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2?topic=console-installing-capabilities-in-red-hat-openshift)** or follow the next steps and...
 
-Check the [Cloud Pack For Business Automation](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2) for more information.
+#### 12. Create CP4BA instance by applying the CP4BA starter CRD (Custom Resource Definition).
+```
+oc apply -f starter-create-instance.yaml
+```
+
+For more information, check the [Cloud Pack For Business Automation](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2) for more information.
