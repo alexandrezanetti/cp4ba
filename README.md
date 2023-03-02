@@ -16,34 +16,55 @@ The yaml files on this repository consider the following:
 
 
 #### 1. Move to a directory where you want to put the temp files.
-> cd /home
+```
+cd /home
+```
 
 #### 2. Install the htpasswd command
-> dnf install -y httpd-tools
+```
+dnf install -y httpd-tools
+```
 
 #### 3. Create a user
-> htpasswd -c -B -b users.htpasswd [username] [password]
+```
+htpasswd -c -B -b users.htpasswd [username] [password]
+```
 
 #### 4. Verify that it worked.
-> htpasswd -b -v users.htpasswd [username] [password]
+```
+htpasswd -b -v users.htpasswd [username] [password]
+```
 
 #### 5. Create a secret to contain the htpasswd file. You must be logged in as the admin user to the cluster.
-> oc create secret generic htpass-secret --from-file=htpasswd=./users.htpasswd -n openshift-config
+```
+oc create secret generic htpass-secret --from-file=htpasswd=./users.htpasswd -n openshift-config
+```
 
 #### 6. Clone this git repository
+```
+git clone https://github.com/alexandrezanetti/cp4ba
+```
 
 #### 7. Apply the config file with the htpasswd identity provider settings.
-> oc apply -f oauth_htpasswd.yaml
+```
+oc apply -f oauth_htpasswd.yaml
+```
 
 #### 8. Apply the service account to the target namespace.
-> oc apply -f service-account-for-starter.yaml -n ${NAMESPACE}
+```
+oc apply -f service-account-for-starter.yaml -n ${NAMESPACE}
+```
 
 #### 9. Bind the security context constraints (SCC) to control the actions the SA can take and what it can access.
-> oc adm policy add-scc-to-user anyuid -z ibm-cp4ba-anyuid -n ${NAMESPACE}
+```
+oc adm policy add-scc-to-user anyuid -z ibm-cp4ba-anyuid -n ${NAMESPACE}
+```
 
 #### 10. Apply the OperatorGroup and Subscription objects to install the operator
-> oc apply -f cp4a-operator-group.yaml<br>
-> oc apply -f cp4a-operator-subscription.yaml
+```
+oc apply -f cp4a-operator-group.yaml<br>
+oc apply -f cp4a-operator-subscription.yaml
+```
 
 It takes some minutes to have the operator installed. You can see the status on OpenShift console by going to **Operators** -> **Installed Operators**.
 After that you are ready to go on and create an instance of each component of Cloud Pak for Business Automation.
