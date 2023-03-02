@@ -20,7 +20,7 @@ The yaml files on this repository consider the following:
 > cd /home
 
 #### 2. Install the htpasswd command
-> yum install httpd-tools
+> dnf install -y httpd-tools
 
 #### 3. Create a user
 > htpasswd -c -B -b users.htpasswd [username] [password]
