@@ -67,8 +67,8 @@ oc adm policy add-scc-to-user anyuid -z ibm-cp4ba-anyuid -n ${NAMESPACE}
 
 #### 11. Apply the OperatorGroup and Subscription objects to install the operator
 ```
-oc apply -f cp4a-operator-group.yaml
-oc apply -f cp4a-operator-subscription.yaml
+oc apply -f cp4ba-operator-group.yaml
+oc apply -f cp4ba-operator-subscription.yaml
 ```
 
 It takes some minutes to have the operator installed. It's imperative that you confirm the operator was installed before moving forward on the next step. You can check the status on OpenShift console by going to **Operators** -> **Installed Operators** and make sure the statuses of the operators are succeed like the image down below:
