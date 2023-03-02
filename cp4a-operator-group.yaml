@@ -5,4 +5,4 @@ metadata:
   namespace: openshift-marketplace
 spec:
   targetNamespaces:
-  - cp4a
+  - cp4ba
