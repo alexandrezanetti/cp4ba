@@ -50,19 +50,24 @@ git clone https://github.com/alexandrezanetti/cp4ba
 oc apply -f oauth_htpasswd.yaml
 ```
 
-#### 8. Apply the service account to the target namespace.
+#### 8. Create namespace variable.
+```
+export NAMESPACE=cp4ba
+```
+
+#### 9. Apply the service account to the target namespace.
 ```
 oc apply -f service-account-for-starter.yaml -n ${NAMESPACE}
 ```
 
-#### 9. Bind the security context constraints (SCC) to control the actions the SA can take and what it can access.
+#### 10. Bind the security context constraints (SCC) to control the actions the SA can take and what it can access.
 ```
 oc adm policy add-scc-to-user anyuid -z ibm-cp4ba-anyuid -n ${NAMESPACE}
 ```
 
-#### 10. Apply the OperatorGroup and Subscription objects to install the operator
+#### 11. Apply the OperatorGroup and Subscription objects to install the operator
 ```
-oc apply -f cp4a-operator-group.yaml<br>
+oc apply -f cp4a-operator-group.yaml
 oc apply -f cp4a-operator-subscription.yaml
 ```
 
