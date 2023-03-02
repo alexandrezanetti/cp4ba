@@ -71,7 +71,10 @@ oc apply -f cp4a-operator-group.yaml
 oc apply -f cp4a-operator-subscription.yaml
 ```
 
-It takes some minutes to have the operator installed. You can see the status on OpenShift console by going to **Operators** -> **Installed Operators**.
+It takes some minutes to have the operator installed. It's imperative that you confirm the operator was installed before moving forward on the next step. You can check the status on OpenShift console by going to **Operators** -> **Installed Operators** and make sure the statuses of the operators are succeed like the image down below:
+
+<img width="1475" alt="image" src="https://user-images.githubusercontent.com/65564207/222499358-2c2a9bcf-a25e-4d74-b4a5-c267c5637cd9.png">
+
 After that you are ready to go on and create an instance of each component of Cloud Pak for Business Automation.
 
 Check the [Cloud Pack For Business Automation](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2) for more information.
