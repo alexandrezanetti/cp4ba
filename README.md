@@ -1,4 +1,4 @@
-# Installing Cloud Pak for Business Automation Operator
+# Installing Cloud Pak for Business Automation Operator - Starter Deployment
 
 This instructions were build upon [Cloud Pack For Business Automation](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2) release 22.0.2 running on [OpenShift](https://docs.openshift.com/container-platform/4.12/welcome/index.html) 4.12.
 
@@ -10,10 +10,9 @@ The yaml files on this repository consider the following:
 
 |Parameter|Value|
 |:---------------|:----------:|
-|anyuid|cp4basauid|
-|[username]|cp4ba|
-|[password]|cp4ba|
-|${NAMESPACE}|cp4a|
+|[username]|cp4ba-user|
+|[password]|password1|
+|${NAMESPACE}|cp4ba|
 
 
 #### 1. Move to a directory where you want to put the temp files.
@@ -40,7 +39,7 @@ The yaml files on this repository consider the following:
 > oc apply -f service-account-for-starter.yaml -n ${NAMESPACE}
 
 #### 9. Bind the security context constraints (SCC) to control the actions the SA can take and what it can access.
-> oc adm policy add-scc-to-user [anyuid] -z ibm-cp4ba-[anyuid] -n ${NAMESPACE}
+> oc adm policy add-scc-to-user anyuid -z ibm-cp4ba-anyuid -n ${NAMESPACE}
 
 #### 10. Apply the OperatorGroup and Subscription objects to install the operator
 > oc apply -f cp4a-operator-group.yaml<br>
