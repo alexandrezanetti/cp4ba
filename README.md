@@ -2,6 +2,12 @@
 
 This instructions were build upon [Cloud Pack For Business Automation](https://www.ibm.com/docs/en/cloud-paks/cp-biz-automation/22.0.2) release 22.0.2 running on [OpenShift](https://docs.openshift.com/container-platform/4.12/welcome/index.html) 4.12.
 
+ZZZ
+
+### 1. [Instalando os operadores do CP4x](https://github.com/alexandrezanetti/cp4x/blob/main/README.md)<br>
+
+ZZZ
+
 It was assumed that you followed the instructions from [fyre-ocp-cp4x](https://github.com/alexandrezanetti/fyre-ocp-cp4x) repository.
 
 Follow the steps below to install Cloud Pak for Automation Operator onto OpenShift Cluster.
